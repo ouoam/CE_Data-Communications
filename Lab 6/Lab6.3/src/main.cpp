@@ -10,14 +10,13 @@ int delay0;
 float S[NUM_DEGREE];
 uint16_t S_DAC[NUM_DEGREE];
 
-#define defaultFreq 10000
 #define freq0 200
 
 void setup()
 {
   Serial.begin(115200);
   dac.begin(0x64);
-  delay0 = ((1000000 / freq0) / NUM_DEGREE) - 1000000 / defaultFreq;
+  delay0 = ((1000000 / freq0) / NUM_DEGREE) - 100;
   Serial.print("delay0 is ");
   Serial.println(delay0);
 
