@@ -56,8 +56,7 @@ void loop()
 {
   if (Serial.available() > 0)
   {
-    delay(5);
-    int in = Serial.parseInt();
+    char in = Serial.read();
     int input[4];
     input[0] = (in >> 0) & B0011;
     input[1] = (in >> 2) & B0011;
@@ -75,6 +74,8 @@ void loop()
         }
       }
     }
-    setVoltage(0);
+    if (Serial.available() == 0){
+      setVoltage(0);
+    }
   }
 }

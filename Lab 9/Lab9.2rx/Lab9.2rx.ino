@@ -24,7 +24,7 @@ int count = 0;
 
 uint32_t startFreq = 0;
 
-uint8_t data = 0;
+char data = 0;
 uint8_t bitC = 0;
 
 void loop() {
@@ -41,7 +41,7 @@ void loop() {
       data |= (count - 2) & B0011;
       bitC++;
       if (bitC == 4) {
-        Serial.println(data);
+        Serial.print(data);
         data = 0;
         bitC = 0;
       }
